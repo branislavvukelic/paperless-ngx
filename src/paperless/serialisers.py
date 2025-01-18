@@ -8,7 +8,7 @@ from rest_framework import serializers
 
 from paperless.models import ApplicationConfiguration
 
-logger = logging.getLogger("paperless.settings")
+logger = logging.getLogger("archiver.settings")
 
 
 class ObfuscatedUserPasswordField(serializers.Field):

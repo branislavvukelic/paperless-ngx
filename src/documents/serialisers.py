@@ -57,7 +57,7 @@ from documents.templating.filepath import validate_filepath_template_and_render
 from documents.templating.utils import convert_format_str_to_template_format
 from documents.validators import uri_validator
 
-logger = logging.getLogger("paperless.serializers")
+logger = logging.getLogger("archiver.serializers")
 
 
 # https://www.django-rest-framework.org/api-guide/serializers/#example

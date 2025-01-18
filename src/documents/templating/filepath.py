@@ -24,7 +24,7 @@ from documents.models import DocumentType
 from documents.models import StoragePath
 from documents.models import Tag
 
-logger = logging.getLogger("paperless.templating")
+logger = logging.getLogger("archiver.templating")
 
 _LogStrictUndefined = make_logging_undefined(logger, StrictUndefined)
 

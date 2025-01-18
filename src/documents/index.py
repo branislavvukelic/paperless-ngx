@@ -44,7 +44,7 @@ from documents.models import Document
 from documents.models import Note
 from documents.models import User
 
-logger = logging.getLogger("paperless.index")
+logger = logging.getLogger("archiver.index")
 
 
 def get_schema():

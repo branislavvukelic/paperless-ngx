@@ -104,7 +104,7 @@ class ConsumerPlugin(
     LoggingMixin,
     ConsumeTaskPlugin,
 ):
-    logging_name = "paperless.consumer"
+    logging_name = "archiver.consumer"
 
     def __init__(
         self,

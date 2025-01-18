@@ -1005,8 +1005,8 @@ msgid "Thank you for using %(site_name)s!\n"
 msgstr ""
 
 #: documents/templates/account/login.html:5
-msgid "Paperless-ngx sign in"
-msgstr "Paperless-ngx prijava"
+msgid "ARHIVER sign in"
+msgstr "ARHIVER prijava"
 
 #: documents/templates/account/login.html:10
 msgid "Please sign in."
@@ -1134,8 +1134,8 @@ msgid "Sign up"
 msgstr ""
 
 #: documents/templates/index.html:61
-msgid "Paperless-ngx is loading..."
-msgstr "Paperless-ngx se učitava..."
+msgid "ARHIVER is loading..."
+msgstr "ARHIVER učitava..."
 
 #: documents/templates/index.html:62
 msgid "Still here?! Hmm, something might be wrong."
@@ -1482,7 +1482,7 @@ msgstr "Kineski pojednostavljen"
 
 #: paperless/urls.py:254
 msgid "Paperless-ngx administration"
-msgstr "Paperless-ngx administracija"
+msgstr "ARHIVER administracija"
 
 #: paperless_mail/admin.py:39
 msgid "Authentication"
@@ -1497,8 +1497,8 @@ msgid "Filter"
 msgstr "Filter"
 
 #: paperless_mail/admin.py:61
-msgid "Paperless will only process mails that match ALL of the filters given below."
-msgstr "Paperless-ngx će obrađivati samo e-poštu koja odgovara SVIM filterima navedenim u nastavku."
+msgid "ARHIVER will only process mails that match ALL of the filters given below."
+msgstr "ARHIVER će obrađivati samo e-poštu koja odgovara SVIM filterima navedenim u nastavku."
 
 #: paperless_mail/admin.py:78
 msgid "Actions"
@@ -1514,7 +1514,7 @@ msgstr "Metapodaci"
 
 #: paperless_mail/admin.py:92
 msgid "Assign metadata to documents consumed from this rule automatically. If you do not assign tags, types or correspondents here, paperless will still process all matching rules that you have defined."
-msgstr "Automatski dodelite metapodatke dokumentima koji se koriste iz ovog pravila. Ako ne dodelite oznaku, vrstu ili korespodenta, Paperless-ngx će i dalje obraditi sva pravila podudaranja koja ste definisali."
+msgstr "Automatski dodelite metapodatke dokumentima koji se koriste iz ovog pravila. Ako ne dodelite oznaku, vrstu ili korespodenta, ARHIVER će i dalje obraditi sva pravila podudaranja koja ste definisali."
 
 #: paperless_mail/apps.py:11
 msgid "Paperless mail"
@@ -1570,11 +1570,11 @@ msgstr "IMAP bezbednost"
 
 #: paperless_mail/models.py:43
 msgid "username"
-msgstr "korisničko ime"
+msgstr ""
 
 #: paperless_mail/models.py:45
 msgid "password"
-msgstr "lozinka"
+msgstr ""
 
 #: paperless_mail/models.py:47
 msgid "Is token authentication"

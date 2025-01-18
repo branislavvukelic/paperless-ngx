@@ -21,7 +21,7 @@ from documents.utils import copy_basic_file_stats
 from documents.utils import copy_file_with_basic_stats
 from documents.utils import maybe_override_pixel_limit
 
-logger = logging.getLogger("paperless.barcodes")
+logger = logging.getLogger("archiver.barcodes")
 
 
 @dataclass(frozen=True)

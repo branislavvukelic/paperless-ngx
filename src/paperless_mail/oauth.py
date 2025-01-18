@@ -83,7 +83,7 @@ class PaperlessMailOAuth2Manager:
         """
         Refreshes the oauth token for the given mail account.
         """
-        logger = logging.getLogger("paperless_mail")
+        logger = logging.getLogger("arhiver_mail")
         logger.debug(f"Attempting to refresh oauth token for account {account}")
         try:
             result: OAuth2Token

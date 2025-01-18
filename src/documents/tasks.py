@@ -47,7 +47,7 @@ from documents.signals.handlers import cleanup_document_deletion
 
 if settings.AUDIT_LOG_ENABLED:
     from auditlog.models import LogEntry
-logger = logging.getLogger("paperless.tasks")
+logger = logging.getLogger("archiver.tasks")
 
 
 @shared_task

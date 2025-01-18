@@ -12,7 +12,7 @@ from documents.models import Document
 if TYPE_CHECKING:
     from documents.classifier import DocumentClassifier
 
-logger = logging.getLogger("paperless.caching")
+logger = logging.getLogger("archiver.caching")
 
 
 @dataclass(frozen=True)

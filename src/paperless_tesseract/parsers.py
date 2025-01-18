@@ -32,7 +32,7 @@ class RasterisedDocumentParser(DocumentParser):
     image, whether it's a PDF, or other graphical format (JPEG, TIFF, etc.)
     """
 
-    logging_name = "paperless.parsing.tesseract"
+    logging_name = "archiver.parsing.tesseract"
 
     def get_settings(self) -> OcrConfig:
         """

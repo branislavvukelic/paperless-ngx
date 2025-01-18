@@ -169,7 +169,7 @@ from paperless_mail.serialisers import MailRuleSerializer
 if settings.AUDIT_LOG_ENABLED:
     from auditlog.models import LogEntry
 
-logger = logging.getLogger("paperless.api")
+logger = logging.getLogger("archiver.api")
 
 
 class IndexView(TemplateView):
@@ -411,7 +411,7 @@ class DocumentViewSet(
         except Exception as e:
             if "Data too long for column" in str(e):
                 logger.warning(
-                    "Detected a possible incompatible database column. See https://docs.paperless-ngx.com/troubleshooting/#convert-uuid-field",
+                    "Detected a possible incompatible database column. See https://docs.wooktech.com/troubleshooting/#convert-uuid-field",
                 )
             logger.error(f"Error deleting document: {e!s}")
             return HttpResponseBadRequest(
@@ -914,7 +914,7 @@ class UnifiedSearchViewSet(DocumentViewSet):
 class LogViewSet(ViewSet):
     permission_classes = (IsAuthenticated, PaperlessAdminPermissions)
 
-    log_files = ["paperless", "mail"]
+    log_files = ["archiver", "celery", "mail"]
 
     def get_log_filename(self, log):
         return os.path.join(settings.LOGGING_DIR, f"{log}.log")

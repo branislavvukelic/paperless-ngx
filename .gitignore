@@ -100,3 +100,7 @@ scripts/nuke
 
 # celery schedule file
 celerybeat-schedule*
+
+/paperless-env/
+#/.devcontainer/
+#/.github/

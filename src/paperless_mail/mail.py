@@ -207,7 +207,7 @@ class TagMailAction(BaseMailAction):
 
 
 def mailbox_login(mailbox: MailBox, account: MailAccount):
-    logger = logging.getLogger("paperless_mail")
+    logger = logging.getLogger("arhiver_mail")
 
     try:
         if account.is_token:
@@ -272,7 +272,7 @@ def apply_mail_action(
             try:
                 action.post_consume(M, message_uid, rule.action_parameter)
             except errors.ImapToolsError:
-                logger = logging.getLogger("paperless_mail")
+                logger = logging.getLogger("arhiver_mail")
                 logger.exception(
                     "Error while processing mail action during post_consume",
                 )
@@ -434,7 +434,7 @@ class MailAccountHandler(LoggingMixin):
     * runs mail actions on the mail server, when consumption is completed
     """
 
-    logging_name = "paperless_mail"
+    logging_name = "arhiver_mail"
 
     _message_preprocessor_types: list[type[MailMessagePreprocessor]] = [
         MailMessageDecryptor,

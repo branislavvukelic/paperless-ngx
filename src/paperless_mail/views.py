@@ -50,7 +50,7 @@ class MailAccountTestView(GenericAPIView):
     serializer_class = MailAccountSerializer
 
     def post(self, request, *args, **kwargs):
-        logger = logging.getLogger("paperless_mail")
+        logger = logging.getLogger("arhiver_mail")
         request.data["name"] = datetime.datetime.now().isoformat()
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -106,7 +106,7 @@ class OauthCallbackView(GenericAPIView):
                 "You do not have permission to add mail accounts",
             )
 
-        logger = logging.getLogger("paperless_mail")
+        logger = logging.getLogger("arhiver_mail")
         code = request.query_params.get("code")
         # Gmail passes scope as a query param, Outlook does not
         scope = request.query_params.get("scope")

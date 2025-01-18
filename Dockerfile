@@ -49,8 +49,8 @@ RUN set -eux \
 #  - Don't leave anything extra in here
 FROM docker.io/python:3.12-slim-bookworm AS main-app
 
-LABEL org.opencontainers.image.authors="paperless-ngx team <hello@paperless-ngx.com>"
-LABEL org.opencontainers.image.documentation="https://docs.paperless-ngx.com/"
+LABEL org.opencontainers.image.authors="wooktech team <info@wooktech.com>"
+LABEL org.opencontainers.image.documentation="https://docs.wooktech.com/"
 LABEL org.opencontainers.image.source="https://github.com/paperless-ngx/paperless-ngx"
 LABEL org.opencontainers.image.url="https://github.com/paperless-ngx/paperless-ngx"
 LABEL org.opencontainers.image.licenses="GPL-3.0-only"
@@ -101,8 +101,8 @@ ARG RUNTIME_PACKAGES="\
   tesseract-ocr-eng \
   tesseract-ocr-deu \
   tesseract-ocr-fra \
-  tesseract-ocr-ita \
-  tesseract-ocr-spa \
+  tesseract-ocr-srp \
+  tesseract-ocr-srp-latn \
   unpaper \
   pngquant \
   jbig2dec \

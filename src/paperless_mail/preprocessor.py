@@ -35,7 +35,7 @@ class MailMessagePreprocessor(abc.ABC):
 
 
 class MailMessageDecryptor(MailMessagePreprocessor, LoggingMixin):
-    logging_name = "paperless_mail_message_decryptor"
+    logging_name = "arhiver_mail_message_decryptor"
 
     NAME = "MailMessageDecryptor"
 

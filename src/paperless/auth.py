@@ -8,7 +8,7 @@ from django.http import HttpRequest
 from django.utils.deprecation import MiddlewareMixin
 from rest_framework import authentication
 
-logger = logging.getLogger("paperless.auth")
+logger = logging.getLogger("archiver.auth")
 
 
 class AutoLoginMiddleware(MiddlewareMixin):

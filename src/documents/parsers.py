@@ -47,7 +47,7 @@ DATE_REGEX = re.compile(
 )
 
 
-logger = logging.getLogger("paperless.parsing")
+logger = logging.getLogger("archiver.parsing")
 
 
 @lru_cache(maxsize=8)
@@ -324,7 +324,7 @@ class DocumentParser(LoggingMixin):
     `paperless_tesseract.parsers` for inspiration.
     """
 
-    logging_name = "paperless.parsing"
+    logging_name = "archiver.parsing"
 
     def __init__(self, logging_group, progress_callback=None):
         super().__init__()

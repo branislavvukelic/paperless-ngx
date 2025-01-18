@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from python_ipware import IpWare
 
-logger = logging.getLogger("paperless.auth")
+logger = logging.getLogger("archiver.auth")
 
 
 # https://docs.djangoproject.com/en/4.1/ref/contrib/auth/#django.contrib.auth.signals.user_login_failed

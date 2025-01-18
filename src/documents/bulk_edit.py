@@ -25,7 +25,7 @@ from documents.tasks import bulk_update_documents
 from documents.tasks import consume_file
 from documents.tasks import update_document_archive_file
 
-logger = logging.getLogger("paperless.bulk_edit")
+logger = logging.getLogger("archiver.bulk_edit")
 
 
 def set_correspondent(doc_ids: list[int], correspondent):
@@ -170,7 +170,7 @@ def delete(doc_ids: list[int]):
     except Exception as e:
         if "Data too long for column" in str(e):
             logger.warning(
-                "Detected a possible incompatible database column. See https://docs.paperless-ngx.com/troubleshooting/#convert-uuid-field",
+                "Detected a possible incompatible database column. See https://docs.wooktech.com/troubleshooting/#convert-uuid-field",
             )
         logger.error(f"Error deleting documents: {e!s}")
 

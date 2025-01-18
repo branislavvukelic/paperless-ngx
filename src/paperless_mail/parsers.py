@@ -30,7 +30,7 @@ class MailDocumentParser(DocumentParser):
     Gotenberg and sends the html part to a Tika server for text extraction.
     """
 
-    logging_name = "paperless.parsing.mail"
+    logging_name = "archiver.parsing.mail"
 
     def _settings_to_gotenberg_pdfa(self) -> PdfAFormat | None:
         """

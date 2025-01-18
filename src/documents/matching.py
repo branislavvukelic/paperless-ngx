@@ -15,7 +15,7 @@ from documents.models import Workflow
 from documents.models import WorkflowTrigger
 from documents.permissions import get_objects_for_user_owner_aware
 
-logger = logging.getLogger("paperless.matching")
+logger = logging.getLogger("archiver.matching")
 
 
 def log_reason(

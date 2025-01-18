@@ -5,6 +5,38 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand d-flex align-items-center me-0 px-3 py-3 order-sm-0"
+  [ngClass]="{ 'slim': slimSidebarEnabled, 'col-auto col-md-3 col-lg-2 col-xxxl-1' : !slimSidebarEnabled, 'py-3' : !customAppTitle?.length || slimSidebarEnabled, 'py-2': customAppTitle?.length }"
+  routerLink="/dashboard"
+  tourAnchor="tour.intro">
+
+ <!-- Display SVG only if customAppLogo doesn't exist -->
+ <ng-container *ngIf="!customAppLogo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="26 30 43 38" width="43" height="30" preserveAspectRatio="xMidYMid meet"
+    color-interpolation-filters="sRGB">
+    <g transform="translate(5, 5) scale(0.058)">
+      <path fill="#3E3A39"
+        d="M1147.581 576.737l-55.642-90.37c-4.744-8.259-13.502-13.351-22.966-13.351h-97.028c-4.536.125-22.646 2.078-33.861 24.543l-93.82 154.769-92.912-129.974c-12.021-12.492-31.518-12.492-43.549 0l-92.905 129.974-93.815-154.769c-11.207-22.465-29.342-24.418-33.864-24.543h-97.028c-9.464 0-18.223 5.092-22.967 13.351l-55.643 90.37a26.789 26.789 0 0 0 0 26.715l244.414 438.964a26.41 26.41 0 0 0 22.93 13.339h34.8c4.881-.326 15.852-2.643 26.586-15.695l73.064-156.652c8.955-10.888 23.458-10.888 32.404 0l73.074 156.652h.073c10.725 13.053 21.694 15.369 26.587 15.695h34.727a26.415 26.415 0 0 0 22.932-13.339l244.41-438.964a26.801 26.801 0 0 0-.001-26.715z" />
+    </g>
+  </svg>
+ </ng-container>
+
+ <!-- Display customAppLogo if it exists -->
+ <div *ngIf="customAppLogo" class="custom-logo" style="width: 32px; height: 32px;">
+   <img [src]="customAppLogo" alt="App Logo" style="width: 100%; height: 100%;" />
+ </div>
+
+ <div class="ms-2 ms-md-3 d-inline-block" [class.d-md-none]="slimSidebarEnabled">
+   @if (customAppTitle?.length) {
+     <div class="d-flex flex-column align-items-start">
+       <span class="title">{{customAppTitle}}</span>
+     </div>
+   } @else {
+     ARCHIVER
+   }
+ </div>
+</a>
+
+  <!--   <a class="navbar-brand d-flex align-items-center me-0 px-3 py-3 order-sm-0"
     [ngClass]="{ 'slim': slimSidebarEnabled, 'col-auto col-md-3 col-lg-2 col-xxxl-1' : !slimSidebarEnabled, 'py-3' : !customAppTitle?.length || slimSidebarEnabled, 'py-2': customAppTitle?.length }"
     routerLink="/dashboard"
     tourAnchor="tour.intro">
@@ -23,7 +55,7 @@
         Paperless-ngx
       }
     </div>
-  </a>
+  </a> -->
   <div class="search-container flex-grow-1 py-2 pb-3 pb-sm-2 px-3 ps-md-4 me-sm-auto order-3 order-sm-1">
     <div class="col-12 col-md-7">
       <pngx-global-search></pngx-global-search>
@@ -54,7 +86,7 @@
         </a>
         <div class="dropdown-divider"></div>
         <a ngbDropdownItem class="nav-link" target="_blank" rel="noopener noreferrer"
-          href="https://docs.paperless-ngx.com">
+          href="https://docs.wooktech.com">
           <i-bs class="me-2" name="question-circle"></i-bs><ng-container i18n>Documentation</ng-container>
         </a>
       </div>
@@ -278,7 +310,7 @@
             }
             <li class="nav-item mt-2" tourAnchor="tour.outro">
               <a class="px-3 py-2 text-muted small d-flex align-items-center flex-wrap text-decoration-none"
-                target="_blank" rel="noopener noreferrer" href="https://docs.paperless-ngx.com" ngbPopover="Documentation"
+                target="_blank" rel="noopener noreferrer" href="https://docs.wooktech.com" ngbPopover="Documentation"
                 i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end" container="body"
                 triggers="mouseenter:mouseleave" popoverClass="popover-slim">
                 <i-bs class="d-flex" name="question-circle"></i-bs><span class="ms-1">&nbsp;<ng-container i18n>Documentation</ng-container></span>
@@ -288,7 +320,7 @@
               <div class="px-3 py-0 text-muted small d-flex align-items-center flex-wrap">
                 <div class="me-3">
                   <a class="text-muted text-decoration-none" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/paperless-ngx/paperless-ngx" ngbPopover="GitHub" i18n-ngbPopover
+                    href="https://wooktech.com/" ngbPopover="WookTech" i18n-ngbPopover
                     [disablePopover]="!slimSidebarEnabled" placement="end" container="body"
                     triggers="mouseenter:mouseleave" popoverClass="popover-slim">
                     {{ versionString }}
@@ -297,12 +329,12 @@
                 @if (!settingsService.updateCheckingIsSet || appRemoteVersion) {
                   <div class="version-check">
                     <ng-template #updateAvailablePopContent>
-                      <span class="small">Paperless-ngx {{ appRemoteVersion.version }} <ng-container i18n>is
+                      <span class="small">ARCHIVER {{ appRemoteVersion.version }} <ng-container i18n>is
                           available.</ng-container><br /><ng-container i18n>Click to view.</ng-container></span>
                     </ng-template>
                     <ng-template #updateCheckingNotEnabledPopContent>
                       <p class="small mb-2">
-                        <ng-container i18n>Paperless-ngx can automatically check for updates</ng-container>
+                        <ng-container i18n>ARCHIVER can automatically check for updates</ng-container>
                       </p>
                       <div class="btn-group btn-group-xs flex-fill w-100">
                         <button class="btn btn-outline-primary" (click)="setUpdateChecking(true)">Enable</button>

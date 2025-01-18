@@ -7,7 +7,7 @@ from paperless_mail.mail import MailError
 from paperless_mail.models import MailAccount
 from paperless_mail.models import MailRule
 
-logger = logging.getLogger("paperless.mail.tasks")
+logger = logging.getLogger("archiver.mail.tasks")
 
 
 @shared_task

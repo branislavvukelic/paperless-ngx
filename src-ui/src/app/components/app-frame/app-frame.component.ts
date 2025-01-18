@@ -110,6 +110,16 @@ export class AppFrameComponent
     return this.settingsService.get(SETTINGS_KEYS.APP_TITLE)
   }
 
+  get customAppLogo(): string {
+    // return this.settingsService.get(SETTINGS_KEYS.APP_LOGO)
+    return this.settingsService.get(SETTINGS_KEYS.APP_LOGO)?.length
+      ? environment.apiBaseUrl.replace(
+          /\/api\/$/,
+          this.settingsService.get(SETTINGS_KEYS.APP_LOGO)
+        )
+      : null
+  }
+
   get slimSidebarEnabled(): boolean {
     return this.settingsService.get(SETTINGS_KEYS.SLIM_SIDEBAR)
   }

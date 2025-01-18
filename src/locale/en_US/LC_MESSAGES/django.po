@@ -1015,7 +1015,7 @@ msgid ""
 msgstr ""
 
 #: documents/templates/account/login.html:5
-msgid "Paperless-ngx sign in"
+msgid "ARHIVER sign in"
 msgstr ""
 
 #: documents/templates/account/login.html:10
@@ -1516,7 +1516,7 @@ msgstr ""
 
 #: paperless_mail/admin.py:61
 msgid ""
-"Paperless will only process mails that match ALL of the filters given below."
+"ARHIVER will only process mails that match ALL of the filters given below."
 msgstr ""
 
 #: paperless_mail/admin.py:78

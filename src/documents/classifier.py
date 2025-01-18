@@ -23,7 +23,7 @@ from documents.caching import CLASSIFIER_VERSION_KEY
 from documents.models import Document
 from documents.models import MatchingModel
 
-logger = logging.getLogger("paperless.classifier")
+logger = logging.getLogger("archiver.classifier")
 
 
 class IncompatibleClassifierVersionError(Exception):

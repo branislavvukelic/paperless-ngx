@@ -458,7 +458,7 @@ SOCIALACCOUNT_PROVIDERS = json.loads(
     os.getenv("PAPERLESS_SOCIALACCOUNT_PROVIDERS", "{}"),
 )
 
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Paperless-ngx] "
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[ARCHIVER] "
 
 DISABLE_REGULAR_LOGIN = __get_boolean("PAPERLESS_DISABLE_REGULAR_LOGIN")
 REDIRECT_LOGIN_TO_SSO = __get_boolean("PAPERLESS_REDIRECT_LOGIN_TO_SSO")
@@ -682,38 +682,7 @@ LANGUAGE_CODE = "en-us"
 
 LANGUAGES = [
     ("en-us", _("English (US)")),  # needs to be first to act as fallback language
-    ("ar-ar", _("Arabic")),
-    ("af-za", _("Afrikaans")),
-    ("be-by", _("Belarusian")),
-    ("bg-bg", _("Bulgarian")),
-    ("ca-es", _("Catalan")),
-    ("cs-cz", _("Czech")),
-    ("da-dk", _("Danish")),
-    ("de-de", _("German")),
-    ("el-gr", _("Greek")),
-    ("en-gb", _("English (GB)")),
-    ("es-es", _("Spanish")),
-    ("fi-fi", _("Finnish")),
-    ("fr-fr", _("French")),
-    ("hu-hu", _("Hungarian")),
-    ("it-it", _("Italian")),
-    ("ja-jp", _("Japanese")),
-    ("ko-kr", _("Korean")),
-    ("lb-lu", _("Luxembourgish")),
-    ("no-no", _("Norwegian")),
-    ("nl-nl", _("Dutch")),
-    ("pl-pl", _("Polish")),
-    ("pt-br", _("Portuguese (Brazil)")),
-    ("pt-pt", _("Portuguese")),
-    ("ro-ro", _("Romanian")),
-    ("ru-ru", _("Russian")),
-    ("sk-sk", _("Slovak")),
-    ("sl-si", _("Slovenian")),
     ("sr-cs", _("Serbian")),
-    ("sv-se", _("Swedish")),
-    ("tr-tr", _("Turkish")),
-    ("uk-ua", _("Ukrainian")),
-    ("zh-cn", _("Chinese Simplified")),
 ]
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
@@ -756,10 +725,10 @@ LOGGING = {
             "class": "logging.StreamHandler",
             "formatter": "verbose",
         },
-        "file_paperless": {
+        "file_arhiver": {
             "class": "concurrent_log_handler.ConcurrentRotatingFileHandler",
             "formatter": "verbose",
-            "filename": os.path.join(LOGGING_DIR, "paperless.log"),
+            "filename": os.path.join(LOGGING_DIR, "archiver.log"),
             "maxBytes": LOGROTATE_MAX_SIZE,
             "backupCount": LOGROTATE_MAX_BACKUPS,
         },
@@ -780,9 +749,9 @@ LOGGING = {
     },
     "root": {"handlers": ["console"]},
     "loggers": {
-        "paperless": {"handlers": ["file_paperless"], "level": "DEBUG"},
-        "paperless_mail": {"handlers": ["file_mail"], "level": "DEBUG"},
-        "ocrmypdf": {"handlers": ["file_paperless"], "level": "INFO"},
+        "archiver": {"handlers": ["file_arhiver"], "level": "DEBUG"},
+        "arhiver_mail": {"handlers": ["file_mail"], "level": "DEBUG"},
+        "ocrmypdf": {"handlers": ["file_arhiver"], "level": "INFO"},
         "celery": {"handlers": ["file_celery"], "level": "DEBUG"},
         "kombu": {"handlers": ["file_celery"], "level": "DEBUG"},
     },

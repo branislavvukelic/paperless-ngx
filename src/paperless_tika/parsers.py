@@ -19,7 +19,7 @@ class TikaDocumentParser(DocumentParser):
     This parser sends documents to a local tika server
     """
 
-    logging_name = "paperless.parsing.tika"
+    logging_name = "archiver.parsing.tika"
 
     def get_thumbnail(self, document_path, mime_type, file_name=None):
         if not self.archive_path:
